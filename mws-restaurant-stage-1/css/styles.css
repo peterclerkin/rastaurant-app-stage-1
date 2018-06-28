@@ -212,7 +212,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -247,10 +247,12 @@ nav h1 a {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 140px 40px 30px;
-  width: 50%;
+  width: 45%;
 }
 #reviews-container {
   padding: 30px 40px 80px;
+  display: flex;
+  flex-direction: column;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -263,9 +265,9 @@ nav h1 a {
   margin: 0;
   padding: 0;
 }
+
 #reviews-list li {
-  background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
@@ -273,10 +275,92 @@ nav h1 a {
   padding: 0 20px 20px;
   position: relative;
   width: 85%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: linear-gradient(#333333 0%, #333333 59px, #ffffff 30px);
+  /* Old browsers */
+  background: -moz-linear-gradient(#333333 0%, #333333 59px, #ffffff 30px);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(#333333 0%, #333333 59px, #ffffff 30px);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(#333333 0%, #333333 59px, #ffffff 30px);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#ffffff', GradientType=0);
+  /* IE6-9 */
+  border-radius: 20px 0px;
 }
+
+
+
 #reviews-list li p {
-  margin: 0 0 10px;
+  margin: 15px 0px 10px;
 }
+
+#reviews-list li > p:nth-child(1) {
+  width: 50%;
+  align-self: center;
+  color: white;
+  font-size: 20px;
+}
+
+#reviews-list li > p:nth-child(2) {
+  width: 50%;
+  text-align: right;
+  color: #cccccc;
+}
+
+#reviews-list li > p:nth-child(3) {
+  text-align: left;
+  padding: 5px 15px;
+  color: white;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border: 0px solid #000000;
+  background-color: #ffa500;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
 #restaurant-hours td {
   color: #666;
+}
+
+/* ====================== Media Query ====================== */
+
+@media only screen and (max-width: 650px) {
+  .inside {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.inside header {
+  order: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header #breadcrumb {
+  order: 1;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.inside #map-container {
+  order: 2;
+  position: relative;
+  height: 350px;
+  width: 100%;
+  top: 131px;
+}
+
+
+
 }
