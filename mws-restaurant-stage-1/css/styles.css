@@ -291,8 +291,6 @@ nav h1 a {
   border-radius: 20px 0px;
 }
 
-
-
 #reviews-list li p {
   margin: 15px 0px 10px;
 }
@@ -332,7 +330,8 @@ nav h1 a {
 
 /* ====================== Media Query ====================== */
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 720px) {
+  
   .inside {
     display: flex;
     flex-direction: row;
@@ -341,16 +340,19 @@ nav h1 a {
 
 .inside header {
   order: 0;
-  position: fixed;
-  top: 0;
   width: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
 }
 
 header #breadcrumb {
   order: 1;
   width: 100%;
   padding-right: 0;
-  padding-left: 0;
+  padding-left: 10px;
 }
 
 .inside #map-container {
@@ -361,6 +363,27 @@ header #breadcrumb {
   top: 131px;
 }
 
+.inside #restaurant-container {
+  order: 3;
+  position: relative;
+  width: 90%;
+  padding: 140px 0px 30px 40px;
+  margin: auto;
+}
+
+.inside #footer {
+  order: 4;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 10px;
+}
+
+.inside #reviews-container {
+  width: 90%;
+  padding: 30px 0px 50px 0px;
+  margin: auto;
+}
 
 
 }

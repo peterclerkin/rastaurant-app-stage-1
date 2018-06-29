@@ -163,13 +163,22 @@ createRestaurantHTML = (restaurant) => {
   address.innerHTML = restaurant.address;
   li.append(address);
 
+  const hiddenDiv = document.createElement('div');
+  hiddenDiv.innerHTML = restaurant.name + ' restaurant - view details';
+  hiddenDiv.id = restaurant.id;
+  hiddenDiv.hidden = true;
+  li.append(hiddenDiv);
+
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.setAttribute('aria-labelledby', hiddenDiv.id);
   li.append(more)
 
   return li
 }
+
+
 
 /**
  * Add markers for current restaurants to the map.
@@ -187,5 +196,21 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 
  }
 
-
+/**
+ * Register the service worker
+ */
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('js/sw.js').then(reg => {
+      console.log('SW Registered');
+      if (reg.installing) {
+          console.log('SW Installing');
+      }
+      if (reg.waiting) {
+          console.log('SW Waiting');
+      }
+      if (reg.active) {
+          console.log('SW Active');
+      }
+  });
+}
 
