@@ -12,9 +12,5 @@ For the this project, I incrementally convert a static webpage to a mobile-ready
 
 3. With your server running, visit the site: `http://localhost:8000`.
 
-## Leaflet.js and Mapbox:
-
-This repository uses [Mapbox](https://www.mapbox.com/).
-
 
 
